@@ -3,18 +3,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    // Zastosuj wtyczkę Kapt używając jej ID
+    
     id("org.jetbrains.kotlin.kapt")
 }
 
 android {
     namespace = "com.example.barcode_scanner"
-    compileSdk = 35 // Upewnij się, że SDK jest aktualne
+    compileSdk = 35 
 
     defaultConfig {
         applicationId = "com.example.barcode_scanner"
         minSdk = 24
-        targetSdk = 35 // Upewnij się, że SDK jest aktualne
+        targetSdk = 35 
         versionCode = 1
         versionName = "1.0"
 
@@ -37,11 +37,11 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    // Konfiguracja dla Kapt
+  
     kapt {
         correctErrorTypes = true
     }
-    // Włączenie ViewBinding (opcjonalne, ale przydatne)
+    
     buildFeatures {
         viewBinding = true
     }
@@ -55,7 +55,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    // Zależność skanera ZXing
+    skaner ZXing
     implementation(libs.scanner)
 
     // Zależności Room
@@ -63,10 +63,10 @@ dependencies {
     implementation(libs.androidx.room.ktx) // Wsparcie dla Coroutines
     kapt(libs.androidx.room.compiler)     // Procesor adnotacji dla Kapt
 
-    // Zależności Lifecycle (dla lifecycleScope)
+    
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // Zależności testowe
+   
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
